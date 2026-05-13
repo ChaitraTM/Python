@@ -1,0 +1,360 @@
+
+
+## 1. IMPORT MODULES
+
+```python
+# Definition: Used to include external libraries in Python program.
+# Usage: import math, import numpy as np
+# Interview: Difference between import, from-import, and import as?
+
+import math
+import math as m
+from math import sqrt
+```
+
+---
+
+## 2. RELOADING MODULES
+
+```python
+# Definition: reload() re-executes module code without restarting Python.
+# Usage: When module is modified during runtime.
+# Interview: Why reload() is needed?
+
+from importlib import reload
+```
+
+---
+
+## 3. PIP INSTALL
+
+```python
+# Definition: pip is package manager to install Python libraries.
+# Usage: pip install numpy
+# Interview: Difference between pip and conda?
+
+```
+
+---
+
+## 4. EXEC FILE
+
+```python
+# Definition: Executes Python file dynamically in current session.
+# Usage: exec(open("file.py").read())
+# Interview: Difference between exec and import?
+
+```
+
+---
+
+## 5. EVAL FUNCTION
+
+```python
+# Definition: Evaluates a string as Python expression.
+# Usage: eval("2+3")
+# Interview: Why is eval dangerous?
+
+```
+
+---
+
+## 6. ASSERT
+
+```python
+# Definition: Used for debugging conditions in code.
+# Usage: assert x > 0
+# Interview: Difference between assert and if?
+
+```
+
+---
+
+## 7. MAP FUNCTION
+
+```python
+# Definition: Applies function to all elements in iterable.
+# Usage: map(lambda x: x*2, list)
+# Interview: Difference between map and for loop?
+
+```
+
+---
+
+## 8. FILTER FUNCTION
+
+```python
+# Definition: Filters elements based on condition.
+# Usage: filter(lambda x: x%2==0, list)
+# Interview: Difference between map and filter?
+
+```
+
+---
+
+## 9. REDUCE FUNCTION
+
+```python
+# Definition: Reduces iterable to single value.
+# Usage: reduce(lambda x,y: x+y, list)
+# Interview: Why is reduce used?
+
+from functools import reduce
+```
+
+---
+
+## 10. LOOPS
+
+```python
+# Definition: Used for iteration (for, while).
+# Usage: repeat execution
+# Interview: Difference between for and while loop?
+
+for i in range(5):
+    pass
+```
+
+---
+
+## 11. ANY / ALL
+
+```python
+# Definition: any() checks if at least one True, all() checks all True.
+# Usage: validation checks
+# Interview: Difference between any and all?
+
+```
+
+---
+
+## 12. ENUMERATE
+
+```python
+# Definition: Gives index + value while iterating.
+# Usage: enumerate(list)
+# Interview: Why use enumerate instead of manual counter?
+
+```
+
+---
+
+## 13. TYPE CHECKING
+
+```python
+# Definition: Checks type or inheritance relationship.
+# Usage: isinstance(x, int)
+# Interview: Difference between isinstance and type()?
+
+```
+
+---
+
+## 14. GLOBALS / LOCALS
+
+```python
+# Definition: Returns global/local symbol table.
+# Usage: debugging variables
+# Interview: Difference between globals and locals?
+
+```
+
+---
+
+## 15. EXCEPTION HANDLING
+
+```python
+# Definition: Handles runtime errors safely.
+# Usage: try-except block
+# Interview: What is exception handling?
+
+```
+
+---
+
+## 16. RAISE EXCEPTION
+
+```python
+# Definition: Manually triggers an error.
+# Usage: raise ValueError("error")
+# Interview: Why use raise?
+
+```
+
+---
+
+## 17. RANGE FUNCTION
+
+```python
+# Definition: Generates sequence of numbers.
+# Usage: for i in range(10)
+# Interview: Difference between range and xrange?
+
+```
+
+---
+
+## 18. INPUT / OUTPUT
+
+```python
+# Definition: Takes input and displays output.
+# Usage: input(), print()
+# Interview: Difference between input() and raw_input()?
+
+```
+
+---
+
+## 19. LAMBDA FUNCTION
+
+```python
+# Definition: Anonymous one-line function.
+# Usage: lambda x: x*x
+# Interview: Why use lambda?
+
+```
+
+---
+
+## 20. FILE HANDLING
+
+```python
+# Definition: Used to read/write files.
+# Usage: open("file.txt")
+# Interview: Why use 'with' keyword?
+
+with open("file.txt", "r") as f:
+    data = f.read()
+```
+
+---
+
+## 21. SORTED FUNCTION
+
+```python
+# Definition: Returns sorted list.
+# Usage: sorted(list)
+# Interview: Difference between sort() and sorted()?
+
+```
+
+---
+
+## 22. SUM FUNCTION
+
+```python
+# Definition: Adds all elements in iterable.
+# Usage: sum(list)
+# Interview: Why is sum faster than loop?
+
+```
+
+---
+
+## 23. STRING CONCATENATION
+
+```python
+# Definition: Joining strings using + operator.
+# Usage: "a" + "b"
+# Interview: Why is join() better than +?
+
+```
+
+---
+
+## 24. SLICING
+
+```python
+# Definition: Extract part of sequence.
+# Usage: list[start:end:step]
+# Interview: What is negative indexing?
+
+```
+
+---
+
+## 25. CLASS & OBJECT
+
+```python
+# Definition: Blueprint for creating objects.
+# Usage: OOP structure
+# Interview: What is __init__?
+
+class A:
+    def __init__(self):
+        pass
+```
+
+---
+
+## 26. EXIT PROGRAM
+
+```python
+# Definition: Stops program execution.
+# Usage: sys.exit()
+# Interview: Difference between exit and break?
+
+import sys
+```
+
+---
+
+## 27. YIELD (GENERATORS)
+
+```python
+# Definition: Produces values one at a time.
+# Usage: memory efficient iteration
+# Interview: yield vs return?
+
+def gen():
+    yield 1
+```
+
+---
+
+## 28. ITERATORS
+
+```python
+# Definition: Object used to traverse data.
+# Usage: iter(), next()
+# Interview: What is iterator protocol?
+
+```
+
+---
+
+## 29. MEMORY VIEW
+
+```python
+# Definition: Access raw memory without copying.
+# Usage: memoryview(bytearray)
+# Interview: Why use memoryview?
+
+```
+
+---
+
+## 30. THREADING
+
+```python
+# Definition: Executes multiple tasks concurrently.
+# Usage: threading module
+# Interview: Difference between process and thread?
+
+import threading
+```
+
+---
+
+# 🎯 IMPORTANT INTERVIEW TOPICS (MOST ASKED)
+
+* map vs filter vs reduce
+* list vs tuple
+* shallow vs deep copy
+* threading vs multiprocessing
+* iterator vs generator
+* lambda vs normal function
+* list comprehension
+* exception handling flow
+
+

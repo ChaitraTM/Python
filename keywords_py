@@ -1,0 +1,492 @@
+
+Definition:
+Keywords are reserved words in Python that
+have predefined meanings.
+
+Keywords cannot be used as:
+- variable names
+- function names
+- class names
+
+
+
+# 🔹 1. What are Keywords?
+
+```python id="kfj7vp"
+# Keywords are reserved words
+
+if = 10     # ERROR
+```
+
+---
+
+## ❌ Output
+
+```python id="v9i7pp"
+SyntaxError
+```
+
+---
+
+## 📌 Explanation
+
+```python id="8uljtl"
+"""
+Python reserves keywords for special purposes.
+They cannot be used as identifiers.
+"""
+```
+
+---
+
+## 🎯 Interview Questions
+
+* What are Python keywords?
+* Can keywords be used as variable names?
+
+---
+
+# 🔹 2. Getting All Keywords
+
+```python id="wdphlf"
+import keyword
+
+print(keyword.kwlist)
+```
+
+---
+
+## ✅ Output
+
+```python id="23e8r4"
+['False', 'None', 'True', 'and', 'as', 'assert',
+ 'async', 'await', 'break', 'class', 'continue',
+ 'def', 'del', 'elif', 'else', 'except',
+ 'finally', 'for', 'from', 'global', 'if',
+ 'import', 'in', 'is', 'lambda', 'nonlocal',
+ 'not', 'or', 'pass', 'raise', 'return',
+ 'try', 'while', 'with', 'yield']
+```
+
+---
+
+## 📌 Explanation
+
+```python id="6is46w"
+"""
+keyword.kwlist returns all reserved keywords
+in Python.
+"""
+```
+
+---
+
+## 🎯 Interview Questions
+
+* How to get all Python keywords?
+* Which module provides keyword list?
+
+---
+
+# 🔹 3. Value Keywords
+
+```python id="yguxwa"
+# Keywords representing values
+
+x = True
+y = False
+z = None
+
+print(x)
+print(y)
+print(z)
+```
+
+---
+
+## 📌 Keywords
+
+| Keyword | Meaning       |
+| ------- | ------------- |
+| True    | Boolean true  |
+| False   | Boolean false |
+| None    | No value      |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between None and 0?
+* What datatype is True?
+
+---
+
+# 🔹 4. Operator Keywords
+
+```python id="jlwm1r"
+a = True
+b = False
+
+print(a and b)
+print(a or b)
+print(not a)
+
+x = [1, 2, 3]
+
+print(2 in x)
+print(5 not in x)
+```
+
+---
+
+## 📌 Operator Keywords
+
+| Keyword | Meaning          |
+| ------- | ---------------- |
+| and     | Logical AND      |
+| or      | Logical OR       |
+| not     | Logical NOT      |
+| is      | Identity check   |
+| in      | Membership check |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between `==` and `is`
+* Difference between `in` and `not in`
+
+---
+
+# 🔹 5. Control Flow Keywords
+
+```python id="ed87m2"
+# if-else
+
+x = 10
+
+if x > 5:
+    print("Greater")
+else:
+    print("Smaller")
+```
+
+---
+
+## 📌 Control Flow Keywords
+
+| Keyword  | Meaning           |
+| -------- | ----------------- |
+| if       | Condition         |
+| else     | Alternative block |
+| elif     | Else if           |
+| for      | Loop              |
+| while    | Conditional loop  |
+| break    | Exit loop         |
+| continue | Skip iteration    |
+| pass     | Empty block       |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between break and continue?
+* What does pass do?
+
+---
+
+# 🔹 6. Exception Handling Keywords
+
+```python id="q73j4q"
+try:
+    x = 10 / 0
+
+except ZeroDivisionError:
+    print("Error")
+
+finally:
+    print("Done")
+```
+
+---
+
+## 📌 Exception Keywords
+
+| Keyword | Meaning              |
+| ------- | -------------------- |
+| try     | Test block           |
+| except  | Handle exception     |
+| finally | Always executes      |
+| raise   | Manually throw error |
+| assert  | Debug condition      |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between raise and assert?
+* Why use finally?
+
+---
+
+# 🔹 7. Function Keywords
+
+```python id="1cn2hn"
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+```
+
+---
+
+## 📌 Function Keywords
+
+| Keyword | Meaning            |
+| ------- | ------------------ |
+| def     | Define function    |
+| return  | Return value       |
+| lambda  | Anonymous function |
+| yield   | Generator          |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between return and yield?
+* What is lambda function?
+
+---
+
+# 🔹 8. Class Keyword
+
+```python id="1ylsl5"
+class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+s1 = Student("Alex")
+
+print(s1.name)
+```
+
+---
+
+## 📌 Class Keyword
+
+| Keyword | Meaning      |
+| ------- | ------------ |
+| class   | Create class |
+
+---
+
+## 🎯 Interview Questions
+
+* What is class in Python?
+* What is **init** ?
+
+---
+
+# 🔹 9. Import Keywords
+
+```python id="dwhn98"
+import math
+
+from math import sqrt
+
+print(sqrt(25))
+```
+
+---
+
+## 📌 Import Keywords
+
+| Keyword | Meaning              |
+| ------- | -------------------- |
+| import  | Import module        |
+| from    | Import specific item |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between import and from-import?
+
+---
+
+# 🔹 10. Scope Keywords
+
+```python id="v55rxt"
+x = 10
+
+def fun():
+    global x
+    x = 20
+
+fun()
+
+print(x)
+```
+
+---
+
+## 📌 Scope Keywords
+
+| Keyword  | Meaning                |
+| -------- | ---------------------- |
+| global   | Access global variable |
+| nonlocal | Access enclosing scope |
+
+---
+
+## 🎯 Interview Questions
+
+* Difference between local and global variables?
+* What is nonlocal?
+
+---
+
+# 🔹 11. Context Management Keywords
+
+```python id="nmgdbw"
+with open("file.txt", "r") as f:
+    data = f.read()
+```
+
+---
+
+## 📌 Context Keywords
+
+| Keyword | Meaning             |
+| ------- | ------------------- |
+| with    | Resource management |
+| as      | Alias name          |
+
+---
+
+## 🎯 Interview Questions
+
+* Why use with statement?
+* Benefits of context manager?
+
+---
+
+# 🔹 12. Async Keywords
+
+```python id="3h8qlu"
+async def hello():
+    print("Hello")
+
+await hello()
+```
+
+---
+
+## 📌 Async Keywords
+
+| Keyword | Meaning               |
+| ------- | --------------------- |
+| async   | Asynchronous function |
+| await   | Wait for async task   |
+
+---
+
+## 🎯 Interview Questions
+
+* What is asynchronous programming?
+* Difference between threading and async?
+
+---
+
+# 🔥 Keywords vs Identifiers
+
+| Keywords          | Identifiers           |
+| ----------------- | --------------------- |
+| Reserved words    | User-defined names    |
+| Cannot be changed | Can be changed        |
+| Part of syntax    | Created by programmer |
+
+---
+
+# 🔥 Variables vs Keywords
+
+| Variables    | Keywords         |
+| ------------ | ---------------- |
+| Store data   | Reserved words   |
+| Can change   | Fixed meanings   |
+| User-defined | Language-defined |
+
+---
+
+# 🚀 MOST ASKED INTERVIEW QUESTIONS
+
+---
+
+## ✅ Basic
+
+1. What are Python keywords?
+2. Why can't keywords be used as variables?
+3. How many keywords are there in Python?
+
+---
+
+## ✅ Medium
+
+4. Difference between identifiers and keywords?
+5. Difference between pass and continue?
+6. Difference between global and nonlocal?
+
+---
+
+## ✅ Advanced
+
+7. What are async and await?
+8. Explain yield keyword.
+9. Difference between None and False?
+
+---
+
+# 📌 VERY IMPORTANT ONE-LINERS
+
+```python id="gj7e3k"
+# Keywords are reserved words with predefined meanings.
+
+# Keywords cannot be used as identifiers.
+
+# Python provides keyword.kwlist to view all keywords.
+```
+
+---
+
+# 📌 Quick Revision Table
+
+| Category   | Keywords          |
+| ---------- | ----------------- |
+| Values     | True, False, None |
+| Logical    | and, or, not      |
+| Conditions | if, else, elif    |
+| Loops      | for, while        |
+| Functions  | def, return       |
+| Exceptions | try, except       |
+| Classes    | class             |
+| Imports    | import, from      |
+| Scope      | global, nonlocal  |
+
+---
+
+# 🎯 Placement Tip
+
+👉 Most asked interview question:
+
+```python id="vjlwm4"
+Difference between keywords and identifiers?
+```
+
+### ✅ Best Answer
+
+```python id="e03kix"
+Keywords are reserved words predefined by Python,
+while identifiers are user-defined names for variables,
+functions, and classes.
+```

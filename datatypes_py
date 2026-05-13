@@ -1,0 +1,370 @@
+
+1. ## WHAT ARE DATA TYPES?
+# ------------------------------------------------------------
+# Data types classify the type of value stored in a variable.
+# Python is dynamically typed -> no need to declare type.
+
+x = 10
+y = 3.14
+name = "Chaitra"
+
+print(type(x))      # <class 'int'>
+print(type(y))      # <class 'float'>
+print(type(name))   # <class 'str'>
+
+
+# ============================================================
+# 2. NUMERIC DATA TYPES
+# ============================================================
+
+# int -> whole numbers
+a = 100
+
+# float -> decimal numbers
+b = 10.5
+
+# complex -> imaginary numbers
+c = 2 + 3j
+
+print(type(a))
+print(type(b))
+print(type(c))
+
+# Interview Question:
+# Q: Difference between int and float?
+# A:
+# int -> whole number
+# float -> decimal value
+
+
+# ============================================================
+# 3. STRING (str)
+# ============================================================
+
+# Ordered, immutable sequence of characters.
+
+s = "Python"
+
+print(s[0])      # P
+print(s[-1])     # n
+
+# String slicing
+print(s[0:3])    # Pyt
+
+# Common methods
+print(s.upper())
+print(s.lower())
+print(len(s))
+
+# Interview Questions:
+# Q: Are strings mutable?
+# A: No
+
+# Q: Difference between list and string?
+# A:
+# List -> mutable
+# String -> immutable
+
+
+# ============================================================
+# 4. LIST
+# ============================================================
+
+# Ordered, mutable collection.
+# Allows duplicate values.
+
+nums = [1, 2, 3, 4]
+
+nums.append(5)
+nums.remove(2)
+
+print(nums)
+
+# Accessing
+print(nums[0])
+print(nums[-1])
+
+# Updating
+nums[1] = 100
+
+print(nums)
+
+# Interview Questions:
+# Q: Why are lists mutable?
+# A: Because elements can be changed after creation.
+
+# Q: Time complexity of append?
+# A: O(1) average
+
+
+# ============================================================
+# 5. TUPLE
+# ============================================================
+
+# Ordered, immutable collection.
+
+t = (1, 2, 3)
+
+print(t[0])
+
+# Cannot modify
+# t[0] = 10  -> ERROR
+
+# Single element tuple
+single = (5,)
+
+# Interview Questions:
+# Q: Difference between list and tuple?
+# A:
+# List  -> mutable
+# Tuple -> immutable
+
+# Q: Why use tuple?
+# A:
+# Faster and safer than lists.
+
+
+# ============================================================
+# 6. SET
+# ============================================================
+
+# Unordered collection.
+# No duplicates allowed.
+
+s = {1, 2, 3, 3, 4}
+
+print(s)
+
+# Add element
+s.add(10)
+
+# Remove element
+s.remove(2)
+
+print(s)
+
+# Interview Questions:
+# Q: Why are sets used?
+# A:
+# Fast searching and removing duplicates.
+
+# Q: Can sets contain duplicates?
+# A: No
+
+
+# ============================================================
+# 7. DICTIONARY (dict)
+# ============================================================
+
+# Stores data as key-value pairs.
+
+student = {
+    "name": "Chaitra",
+    "age": 21,
+    "cgpa": 8.5
+}
+
+print(student["name"])
+
+# Add/update
+student["age"] = 22
+
+# Add new key
+student["branch"] = "CSE"
+
+print(student)
+
+# Interview Questions:
+# Q: Are dictionary keys unique?
+# A: Yes
+
+# Q: Are dictionaries ordered?
+# A:
+# Yes (Python 3.7+)
+
+
+# ============================================================
+# 8. BOOLEAN
+# ============================================================
+
+# Only two values:
+# True and False
+
+is_passed = True
+
+print(type(is_passed))
+
+# Used in conditions
+if is_passed:
+    print("Pass")
+
+# Interview Question:
+# Q: What are falsy values?
+# A:
+# False, 0, None, "", [], {}, set()
+
+
+# ============================================================
+# 9. NONE TYPE
+# ============================================================
+
+# Represents absence of value.
+
+x = None
+
+print(type(x))
+
+# Interview Question:
+# Q: Difference between None and 0?
+# A:
+# None -> no value
+# 0 -> integer value
+
+
+# ============================================================
+# 10. TYPE CASTING
+# ============================================================
+
+# Convert one datatype to another.
+
+a = "10"
+
+print(int(a) + 5)
+
+b = 5
+print(float(b))
+
+c = 10
+print(str(c))
+
+# Interview Questions:
+# Q: What is type casting?
+# A:
+# Converting one datatype into another.
+
+
+# ============================================================
+# 11. MUTABLE VS IMMUTABLE
+# ============================================================
+
+# Mutable:
+# list, dict, set
+
+# Immutable:
+# int, float, string, tuple
+
+# Example:
+a = [1, 2]
+a[0] = 100
+
+print(a)
+
+# Immutable example
+s = "python"
+
+# s[0] = 'P' -> ERROR
+
+
+# ============================================================
+# 12. CHECKING DATA TYPE
+# ============================================================
+
+x = [1, 2, 3]
+
+print(type(x))
+
+print(isinstance(x, list))
+
+# Interview Question:
+# Q: Difference between type() and isinstance()?
+# A:
+# isinstance() also checks inheritance.
+
+
+# ============================================================
+# 13. MEMORY CONCEPT
+# ============================================================
+
+x = 10
+y = x
+
+print(id(x))
+print(id(y))
+
+# Both point to same object initially.
+
+# Reassignment
+y = 20
+
+print(x)
+print(y)
+
+# Interview Question:
+# Q: Do variables store values directly?
+# A:
+# No, variables store references to objects.
+
+
+# ============================================================
+# 14. IMPORTANT BUILT-IN DATA TYPES SUMMARY
+# ============================================================
+
+# int       -> Whole numbers
+# float     -> Decimal numbers
+# complex   -> Imaginary numbers
+# str       -> Text data
+# list      -> Mutable ordered collection
+# tuple     -> Immutable ordered collection
+# set       -> Unique unordered collection
+# dict      -> Key-value pairs
+# bool      -> True/False
+# NoneType  -> No value
+
+
+# ============================================================
+# 15. FREQUENTLY ASKED INTERVIEW QUESTIONS
+# ============================================================
+
+# Q1: Difference between list and tuple?
+# A:
+# List -> mutable
+# Tuple -> immutable
+
+# Q2: Why are sets faster?
+# A:
+# Because sets use hashing.
+
+# Q3: Can dictionary keys be mutable?
+# A:
+# No. Keys must be immutable.
+
+# Q4: Difference between == and is?
+# A:
+# == checks values
+# is checks memory location
+
+# Q5: Which data types are mutable?
+# A:
+# list, set, dict
+
+# Q6: What is dynamic typing?
+# A:
+# Variable type decided at runtime.
+
+# Q7: What is slicing?
+# A:
+# Extracting part of sequence using [start:end:step]
+
+# Q8: Can a list contain different data types?
+# A:
+# Yes
+
+# Q9: Why use tuples instead of lists?
+# A:
+# Faster, immutable, hashable
+
+# Q10: What is hashing in Python?
+# A:
+# Technique used for fast lookup in sets and dictionaries.
+
+

@@ -1,0 +1,431 @@
+# ============================================================
+# PYTHON CONDITIONAL STATEMENTS + LOOPS
+# ============================================================
+
+
+# ============================================================
+# 1. CONDITIONAL STATEMENTS
+# ============================================================
+
+# Conditional statements control the flow of program
+# based on conditions.
+
+# ============================================================
+# 2. IF STATEMENT
+# ============================================================
+
+# Executes code only if condition is True.
+
+age = 20
+
+if age >= 18:
+    print("Eligible to vote")
+
+# Interview Question:
+# Q: When is if statement used?
+# A:
+# To execute code only when condition is true.
+
+
+# ============================================================
+# 3. SHORT HAND IF
+# ============================================================
+
+marks = 90
+
+if marks > 40: print("Pass")
+
+# Used for single line conditions.
+
+
+# ============================================================
+# 4. IF-ELSE
+# ============================================================
+
+age = 15
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# Interview Question:
+# Q: Difference between if and if-else?
+# A:
+# if -> executes only when condition is true
+# if-else -> handles both true and false cases
+
+
+# ============================================================
+# 5. ELIF
+# ============================================================
+
+marks = 85
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 50:
+    print("Grade C")
+else:
+    print("Fail")
+
+# Interview Question:
+# Q: Why use elif?
+# A:
+# To check multiple conditions efficiently.
+
+
+# ============================================================
+# 6. NESTED IF
+# ============================================================
+
+age = 65
+member = True
+
+if age >= 60:
+    if member:
+        print("30% Discount")
+    else:
+        print("20% Discount")
+
+# Interview Question:
+# Q: What is nested if?
+# A:
+# if statement inside another if statement.
+
+
+# ============================================================
+# 7. TERNARY OPERATOR
+# ============================================================
+
+age = 20
+
+status = "Adult" if age >= 18 else "Minor"
+
+print(status)
+
+# Syntax:
+# value_if_true if condition else value_if_false
+
+# Interview Question:
+# Q: What is ternary operator?
+# A:
+# Single line shorthand for if-else.
+
+
+# ============================================================
+# 8. MATCH-CASE (Python 3.10+)
+# ============================================================
+
+day = 2
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case _:
+        print("Invalid")
+
+# Interview Question:
+# Q: Which statement is similar to switch-case?
+# A:
+# match-case
+
+
+# ============================================================
+# 9. COMPARISON OPERATORS IN CONDITIONS
+# ============================================================
+
+a = 10
+b = 20
+
+print(a == b)   # False
+print(a != b)   # True
+print(a > b)    # False
+print(a < b)    # True
+print(a >= b)   # False
+print(a <= b)   # True
+
+
+# ============================================================
+# 10. LOGICAL OPERATORS
+# ============================================================
+
+x = True
+y = False
+
+print(x and y)
+print(x or y)
+print(not x)
+
+# Interview Question:
+# Q: Difference between and/or?
+# A:
+# and -> both conditions true
+# or  -> at least one condition true
+
+
+# ============================================================
+# 11. FOR LOOP
+# ============================================================
+
+# Used for iterating over sequences.
+
+for i in range(5):
+    print(i)
+
+# Output:
+# 0 1 2 3 4
+
+# Interview Question:
+# Q: What does range(5) return?
+# A:
+# Numbers from 0 to 4
+
+
+# ============================================================
+# 12. FOR LOOP WITH START, STOP, STEP
+# ============================================================
+
+for i in range(1, 10, 2):
+    print(i)
+
+# Output:
+# 1 3 5 7 9
+
+# range(start, stop, step)
+
+
+# ============================================================
+# 13. ITERATING THROUGH STRING
+# ============================================================
+
+name = "Python"
+
+for ch in name:
+    print(ch)
+
+
+# ============================================================
+# 14. ITERATING THROUGH LIST
+# ============================================================
+
+nums = [10, 20, 30]
+
+for n in nums:
+    print(n)
+
+
+# ============================================================
+# 15. LOOP USING INDEX
+# ============================================================
+
+arr = [1, 2, 3]
+
+for i in range(len(arr)):
+    print(arr[i])
+
+# Interview Question:
+# Q: Why use len()?
+# A:
+# To get total number of elements.
+
+
+# ============================================================
+# 16. WHILE LOOP
+# ============================================================
+
+# Executes while condition is true.
+
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1
+
+# Interview Question:
+# Q: Difference between for and while?
+# A:
+# for -> fixed iterations
+# while -> condition based iterations
+
+
+# ============================================================
+# 17. INFINITE LOOP
+# ============================================================
+
+# while True:
+#     print("Infinite")
+
+# Runs forever until manually stopped.
+
+
+# ============================================================
+# 18. NESTED LOOPS
+# ============================================================
+
+for i in range(1, 4):
+    for j in range(i):
+        print(i, end=" ")
+    print()
+
+# Output:
+# 1
+# 2 2
+# 3 3 3
+
+# Interview Question:
+# Q: What is nested loop?
+# A:
+# Loop inside another loop.
+
+
+# ============================================================
+# 19. BREAK
+# ============================================================
+
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+# Stops loop completely.
+
+
+# ============================================================
+# 20. CONTINUE
+# ============================================================
+
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+
+# Skips current iteration.
+
+
+# ============================================================
+# 21. PASS
+# ============================================================
+
+for i in range(3):
+    pass
+
+# pass does nothing.
+# Used as placeholder.
+
+
+# ============================================================
+# 22. LOOP ELSE
+# ============================================================
+
+for i in range(3):
+    print(i)
+else:
+    print("Loop completed")
+
+# else executes if loop finishes normally.
+
+
+# ============================================================
+# 23. COMMON PATTERN QUESTIONS
+# ============================================================
+
+# Pattern 1
+for i in range(1, 5):
+    print("*" * i)
+
+# Output:
+# *
+# **
+# ***
+# ****
+
+
+# ============================================================
+# 24. FACTORIAL USING LOOP
+# ============================================================
+
+n = 5
+fact = 1
+
+for i in range(1, n + 1):
+    fact *= i
+
+print(fact)
+
+# Output:
+# 120
+
+
+# ============================================================
+# 25. PRIME NUMBER CHECK
+# ============================================================
+
+n = 7
+prime = True
+
+for i in range(2, n):
+    if n % i == 0:
+        prime = False
+        break
+
+if prime:
+    print("Prime")
+else:
+    print("Not Prime")
+
+
+# ============================================================
+# 26. FREQUENTLY ASKED INTERVIEW QUESTIONS
+# ============================================================
+
+# Q1: Difference between break and continue?
+# A:
+# break -> exits loop
+# continue -> skips iteration
+
+# Q2: What is infinite loop?
+# A:
+# Loop that never ends.
+
+# Q3: What does pass do?
+# A:
+# Placeholder statement.
+
+# Q4: Difference between while and for loop?
+# A:
+# for -> sequence iteration
+# while -> condition based
+
+# Q5: What is nested loop?
+# A:
+# Loop inside another loop.
+
+# Q6: What is loop control statement?
+# A:
+# break, continue, pass
+
+# Q7: Can else be used with loop?
+# A:
+# Yes
+
+# Q8: What happens if condition in while never becomes false?
+# A:
+# Infinite loop occurs.
+
+# Q9: Time complexity of nested loop?
+# A:
+# Usually O(n²)
+
+# Q10: Which loop is best when number of iterations is unknown?
+# A:
+# while loop
+
+
+# ============================================================
+# END OF NOTES
+# ============================================================

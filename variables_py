@@ -1,0 +1,415 @@
+
+
+# 🔹 1. Creating Variables
+
+```python
+# Variables store values
+
+x = 5
+name = "Alex"
+
+print(x)
+print(name)
+```
+
+### ✅ Output
+
+```python
+5
+Alex
+```
+
+### 🎯 Interview Question
+
+* What is a variable in Python?
+* Why is Python called dynamically typed?
+
+---
+
+# 🔹 2. Rules for Naming Variables
+
+```python
+# VALID VARIABLES
+
+age = 21
+_colour = "Lilac"
+total_score = 90
+myVar = 100
+```
+
+```python
+# INVALID VARIABLES
+
+# 1name = "Error"     # starts with digit
+# class = 10          # keyword
+# user-name = "Alex"  # hyphen not allowed
+```
+
+---
+
+## 📌 Variable Naming Rules
+
+```python
+"""
+1. Can contain letters, digits, underscore (_)
+2. Cannot start with digit
+3. Case-sensitive
+4. Cannot use keywords
+"""
+```
+
+### 🎯 Interview Question
+
+* Are Python variables case-sensitive?
+* Can variable names start with numbers?
+
+---
+
+# 🔹 3. Dynamic Typing
+
+```python
+# Same variable can store different datatypes
+
+x = 10
+print(x)
+
+x = "Python"
+print(x)
+```
+
+### ✅ Output
+
+```python
+10
+Python
+```
+
+### 🎯 Interview Question
+
+* What is dynamic typing?
+* Difference between static and dynamic typing?
+
+---
+
+# 🔹 4. Multiple Assignment
+
+## ✅ Same Value
+
+```python
+a = b = c = 100
+
+print(a, b, c)
+```
+
+### ✅ Output
+
+```python
+100 100 100
+```
+
+---
+
+## ✅ Different Values
+
+```python
+x, y, z = 1, 2.5, "Python"
+
+print(x)
+print(y)
+print(z)
+```
+
+### ✅ Output
+
+```python
+1
+2.5
+Python
+```
+
+### 🎯 Interview Question
+
+* Explain multiple assignment in Python.
+
+---
+
+# 🔹 5. Object Reference Concept
+
+```python
+x = 5
+y = x
+
+print(x)
+print(y)
+```
+
+### 📌 Explanation
+
+```python
+"""
+Both x and y reference SAME object 5
+"""
+```
+
+---
+
+## Reassignment
+
+```python
+x = "Geeks"
+
+print(x)
+print(y)
+```
+
+### ✅ Output
+
+```python
+Geeks
+5(from previous)
+```
+
+### 📌 Explanation
+
+```python
+"""
+x now points to new object "Geeks"
+y still points to old object 5
+"""
+```
+
+### 🎯 Interview Question
+
+* Do variables store values or references?
+* What is shared reference?
+
+---
+
+# 🔹 6. Variable Reassignment
+
+```python
+x = 1
+y = x
+
+y = y + 1
+
+print(x)
+print(y)
+```
+
+### ✅ Output
+
+```python
+1
+2
+```
+
+### 📌 Explanation
+
+```python
+"""
+Changing y does not affect x
+because new object is created
+"""
+```
+
+### 🎯 Interview Question
+
+* Why does changing y not affect x?
+
+---
+
+# 🔹 7. Type Checking
+
+```python
+x = 10
+print(type(x))
+
+name = "Alex"
+print(type(name))
+```
+
+### ✅ Output
+
+```python
+<class 'int'>
+<class 'str'>
+```
+
+### 🎯 Interview Question
+
+* What does type() do?
+
+---
+
+# 🔹 8. Type Casting
+
+```python
+x = "10"
+
+num = int(x)
+
+print(num)
+print(type(num))
+```
+
+### ✅ Output
+
+```python
+10
+<class 'int'>
+```
+
+---
+
+## Common Casting Functions
+
+```python
+int()
+float()
+str()
+bool()
+list()
+tuple()
+```
+
+### 🎯 Interview Question
+
+* What is type casting?
+* Difference between implicit and explicit conversion?
+
+---
+
+# 🔹 9. Delete Variable
+
+```python
+x = 10
+
+del x
+
+# print(x)  --> ERROR
+```
+
+### 📌 Explanation
+
+```python
+"""
+del removes variable from memory
+"""
+```
+
+### 🎯 Interview Question
+
+* What does del keyword do?
+
+---
+
+# 🔹 10. Swapping Variables
+
+```python
+a = 5
+b = 10
+
+a, b = b, a
+
+print(a, b)
+```
+
+### ✅ Output
+
+```python
+10 5
+```
+
+### 🎯 Interview Question
+
+* How to swap variables without temporary variable?
+
+---
+
+# 🔹 11. String Length Example
+
+```python
+word = "Python"
+
+length = len(word)
+
+print(length)
+```
+
+### ✅ Output
+
+```python
+6
+```
+
+### 🎯 Interview Question
+
+* What does len() function do?
+
+---
+
+# 🔥 MOST ASKED INTERVIEW QUESTIONS
+
+## ✅ Basic
+
+1. What is a variable?
+2. What is dynamic typing?
+3. Rules for naming variables?
+4. What is type casting?
+
+---
+
+## ✅ Medium
+
+5. Difference between mutable and immutable?
+6. What is object reference?
+7. Difference between = and == ?
+8. What happens internally during assignment?
+
+---
+
+## ✅ Advanced
+
+9. What is garbage collection?
+10. How memory works in Python?
+11. Explain shared references.
+12. Difference between shallow and deep copy?
+
+---
+
+# 🚀 VERY IMPORTANT ONE-LINERS
+
+```python
+# Python variables store references to objects, not actual values.
+
+# Python is dynamically typed language.
+
+# Variables are created automatically during assignment.
+
+# Reassigning creates new object references.
+```
+
+---
+
+# 📌 Quick Revision Table
+
+| Concept          | Meaning                     |
+| ---------------- | --------------------------- |
+| Variable         | Stores data                 |
+| Dynamic Typing   | Type decided at runtime     |
+| type()           | Finds datatype              |
+| int()            | Converts to integer         |
+| del              | Deletes variable            |
+| Shared Reference | Multiple vars → same object |
+
+---
+
+# 🎯 Placement Tip
+
+👉 For interviews, remember this line:
+
+```python
+"Python variables are references to objects and are dynamically typed."
+```
+

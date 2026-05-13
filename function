@@ -1,0 +1,613 @@
+# Python Functions Complete Notes
+
+# 1. Function in Python
+
+## Definition
+
+A function is a reusable block of code used to perform a specific task.
+
+## Why Functions Are Used
+
+* Reduce code repetition
+* Improve readability
+* Make debugging easier
+* Reuse code multiple times
+
+---
+
+# 2. Defining a Function
+
+## Syntax
+
+```python
+def function_name():
+    # code
+```
+
+## Example
+
+```python
+def fun():
+    print("Welcome to Python")
+```
+
+## Output
+
+(No output until function is called)
+
+---
+
+# 3. Calling a Function
+
+## Definition
+
+Calling a function means executing the function.
+
+## Example
+
+```python
+def fun():
+    print("Welcome")
+
+fun()
+```
+
+## Output
+
+```python
+Welcome
+```
+
+---
+
+# 4. Function Arguments
+
+## Definition
+
+Arguments are values passed to a function.
+
+## Example
+
+```python
+def add(a, b):
+    print(a + b)
+
+add(10, 20)
+```
+
+## Output
+
+```python
+30
+```
+
+---
+
+# 5. Return Statement
+
+## Definition
+
+return sends a value back from the function.
+
+## Syntax
+
+```python
+return value
+```
+
+## Example
+
+```python
+def square(x):
+    return x * x
+
+print(square(5))
+```
+
+## Output
+
+```python
+25
+```
+
+---
+
+# 6. Types of Function Arguments
+
+---
+
+# A. Default Arguments
+
+## Definition
+
+Default arguments use predefined values if no value is passed.
+
+## Example
+
+```python
+def student(name="Guest"):
+    print(name)
+
+student()
+student("Ram")
+```
+
+## Output
+
+```python
+Guest
+Ram
+```
+
+## Use
+
+Used to avoid passing values every time.
+
+---
+
+# B. Keyword Arguments
+
+## Definition
+
+Arguments passed using parameter names.
+
+## Example
+
+```python
+def student(name, age):
+    print(name, age)
+
+student(age=20, name="Ram")
+```
+
+## Output
+
+```python
+Ram 20
+```
+
+## Use
+
+Order of arguments does not matter.
+
+---
+
+# C. Positional Arguments
+
+## Definition
+
+Arguments assigned according to position.
+
+## Example
+
+```python
+def data(name, age):
+    print(name, age)
+
+data("Ram", 20)
+```
+
+## Output
+
+```python
+Ram 20
+```
+
+---
+
+# D. Arbitrary Arguments (*args)
+
+## Definition
+
+*args allows multiple positional arguments.
+
+## Example
+
+```python
+def numbers(*args):
+    print(args)
+
+numbers(1, 2, 3, 4)
+```
+
+## Output
+
+```python
+(1, 2, 3, 4)
+```
+
+## Use
+
+Used when number of inputs is unknown.
+
+---
+
+# E. Keyword Arbitrary Arguments (**kwargs)
+
+## Definition
+
+**kwargs allows multiple keyword arguments.
+
+## Example
+
+```python
+def student(**kwargs):
+    print(kwargs)
+
+student(name="Ram", age=20)
+```
+
+## Output
+
+```python
+{'name': 'Ram', 'age': 20}
+```
+
+---
+
+# 7. Nested Function
+
+## Definition
+
+Function inside another function.
+
+## Example
+
+```python
+def outer():
+    
+    def inner():
+        print("Inner Function")
+    
+    inner()
+
+outer()
+```
+
+## Output
+
+```python
+Inner Function
+```
+
+## Use
+
+Used for better organization and encapsulation.
+
+---
+
+# 8. Lambda Function
+
+## Definition
+
+A lambda function is an anonymous one-line function.
+
+## Syntax
+
+```python
+lambda arguments : expression
+```
+
+## Example
+
+```python
+square = lambda x: x*x
+
+print(square(4))
+```
+
+## Output
+
+```python
+16
+```
+
+## Use
+
+Used for short temporary functions.
+
+---
+
+# 9. Pass by Reference and Pass by Value
+
+---
+
+# Mutable Object Example
+
+## Definition
+
+Mutable objects can be changed.
+
+## Example
+
+```python
+def change(lst):
+    lst[0] = 100
+
+a = [1, 2, 3]
+change(a)
+
+print(a)
+```
+
+## Output
+
+```python
+[100, 2, 3]
+```
+
+---
+
+# Immutable Object Example
+
+## Definition
+
+Immutable objects cannot be changed.
+
+## Example
+
+```python
+def change(x):
+    x = 20
+
+a = 10
+change(a)
+
+print(a)
+```
+
+## Output
+
+```python
+10
+```
+
+---
+
+# 10. Function with No Arguments
+
+## Example
+
+```python
+def greet():
+    print("Hello")
+
+greet()
+```
+
+---
+
+# 11. Function with Arguments
+
+## Example
+
+```python
+def add(a, b):
+    print(a+b)
+
+add(5, 10)
+```
+
+---
+
+# 12. Function with Return Value
+
+## Example
+
+```python
+def add(a, b):
+    return a+b
+
+result = add(5, 10)
+print(result)
+```
+
+---
+
+# 13. Recursive Function
+
+## Definition
+
+Function calling itself.
+
+## Example
+
+```python
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+print(fact(5))
+```
+
+## Output
+
+```python
+120
+```
+
+---
+
+# 14. Built-in Functions
+
+## Definition
+
+Functions already available in Python.
+
+## Examples
+
+```python
+print()
+len()
+type()
+range()
+input()
+```
+
+---
+
+# 15. User-defined Functions
+
+## Definition
+
+Functions created by programmer.
+
+## Example
+
+```python
+def greet():
+    print("Hello")
+```
+
+---
+
+# Important Interview Questions
+
+## Q1. What is a function in Python?
+
+A reusable block of code used to perform a task.
+
+---
+
+## Q2. Why are functions used?
+
+* Reusability
+* Reduce code duplication
+* Better readability
+
+---
+
+## Q3. Difference between argument and parameter?
+
+| Parameter                       | Argument                          |
+| ------------------------------- | --------------------------------- |
+| Variable in function definition | Value passed during function call |
+
+Example:
+
+```python
+def add(a, b):   # parameters
+    return a+b
+
+add(5, 10)       # arguments
+```
+
+---
+
+## Q4. What is return statement?
+
+Used to return value from a function.
+
+---
+
+## Q5. What is lambda function?
+
+Anonymous one-line function.
+
+---
+
+## Q6. Difference between print() and return()?
+
+| print()         | return()         |
+| --------------- | ---------------- |
+| Displays output | Sends value back |
+
+---
+
+## Q7. What is recursion?
+
+Function calling itself.
+
+---
+
+## Q8. What is *args?
+
+Used to accept multiple positional arguments.
+
+---
+
+## Q9. What is **kwargs?
+
+Used to accept multiple keyword arguments.
+
+---
+
+## Q10. What is nested function?
+
+Function defined inside another function.
+
+---
+
+# Most Important Programs for Interview
+
+## 1. Even Odd Function
+
+```python
+def evenOdd(x):
+    if x % 2 == 0:
+        return "Even"
+    return "Odd"
+
+print(evenOdd(10))
+```
+
+---
+
+## 2. Factorial Using Function
+
+```python
+def fact(n):
+    f = 1
+    for i in range(1, n+1):
+        f *= i
+    return f
+
+print(fact(5))
+```
+
+---
+
+## 3. Fibonacci Using Function
+
+```python
+def fibonacci(n):
+    a, b = 0, 1
+
+    for i in range(n):
+        print(a, end=" ")
+        a, b = b, a+b
+
+fibonacci(5)
+```
+
+---
+
+## 4. Largest of Three Numbers
+
+```python
+def largest(a, b, c):
+    return max(a, b, c)
+
+print(largest(10, 20, 30))
+```
+
+---
+
+## 5. Prime Number Check
+
+```python
+def prime(n):
+
+    if n <= 1:
+        return "Not Prime"
+
+    for i in range(2, n):
+        if n % i == 0:
+            return "Not Prime"
+
+    return "Prime"
+
+print(prime(7))
+```
+
