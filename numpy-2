@@ -1,0 +1,844 @@
+Here’s a clean **VS Code–ready recap** you can paste directly:
+
+---
+
+## Copy vs View in Python (Interview Notes)
+
+### 1. Copy
+
+A **copy** creates a new object in memory. The original and the copy are independent.
+
+* Changes in the copy do NOT affect the original (in deep copy).
+* Used when you want full isolation.
+
+#### Types:
+
+**Shallow Copy**
+
+* New outer object
+* Inner objects are still shared
+
+```python
+import copy
+
+a = [[1, 2], [3, 4]]
+b = copy.copy(a)
+
+b[0][0] = 99
+
+print(a)  # [[99, 2], [3, 4]] → affected (nested data shared)
+```
+
+**Deep Copy**
+
+* Fully independent copy (including nested objects)
+
+```python
+import copy
+
+a = [[1, 2], [3, 4]]
+b = copy.deepcopy(a)
+
+b[0][0] = 99
+
+print(a)  # [[1, 2], [3, 4]] → not affected
+```
+
+---
+
+### 2. View
+
+A **view** does NOT create a new object. It shares the same memory as the original data.
+
+* Faster and memory efficient
+* Changes in view affect original data
+
+Common in **NumPy**
+
+```python
+import numpy as np
+
+a = np.array([1, 2, 3, 4])
+b = a[1:3]   # view
+
+b[0] = 99
+
+print(a)  # [1 99 3 4] → original affected
+```
+
+---
+
+### 3. Key Difference
+
+| Feature        | Copy                   | View                 |
+| -------------- | ---------------------- | -------------------- |
+| Memory         | New object             | Shared memory        |
+| Independence   | Yes (deep copy)        | No                   |
+| Speed          | Slower                 | Faster               |
+| Effect on data | Safe (no side effects) | Changes reflect back |
+
+---
+
+### 4. One-line summary (Interview friendly)
+
+* **Copy → independent object**
+* **View → shared memory reference**
+
+---
+
+Here’s a clean **VS Code–ready interview recap** for *iterating over arrays in Python*:
+
+---
+
+## Iterating Over Arrays in Python
+
+In Python, arrays can be iterated using different methods depending on the type (list, NumPy array, etc.).
+
+---
+
+## 1. Iterating over a list (basic Python array)
+
+### a) Direct iteration
+
+```python id="k1"
+arr = [10, 20, 30, 40]
+
+for item in arr:
+    print(item)
+```
+
+---
+
+### b) Using index (when position matters)
+
+```python id="k2"
+arr = [10, 20, 30, 40]
+
+for i in range(len(arr)):
+    print(i, arr[i])
+```
+
+---
+
+### c) Using enumerate (best practice)
+
+Gives both index and value
+
+```python id="k3"
+arr = [10, 20, 30, 40]
+
+for i, val in enumerate(arr):
+    print(i, val)
+```
+
+---
+
+## 2. Iterating over NumPy arrays
+
+### a) Element-wise iteration
+
+```python id="k4"
+import numpy as np
+
+arr = np.array([10, 20, 30, 40])
+
+for val in arr:
+    print(val)
+```
+
+---
+
+### b) Iterating 2D arrays (row-wise)
+
+```python id="k5"
+arr = np.array([[1, 2], [3, 4]])
+
+for row in arr:
+    print(row)
+```
+
+---
+
+### c) Iterating each element in multi-dim array
+
+```python id="k6"
+for val in np.nditer(arr):
+    print(val)
+```
+
+---
+
+## 3. Important Interview Points
+
+* `for item in arr` → simplest and most Pythonic
+* `enumerate()` → preferred when index is needed
+* NumPy:
+
+  * Iteration is slower than vectorized operations
+  * Prefer vectorization over loops for performance
+
+---
+
+## 4. One-line summary
+
+* **List → iterate with for / enumerate**
+* **NumPy → iterate with for or nditer, but prefer vectorized ops**
+
+---
+
+# NumPy String Functions
+
+NumPy provides the **`numpy.char`** module for vectorized string operations.
+
+```python
+import numpy as np
+```
+
+---
+
+## Creating String Arrays
+
+```python
+arr = np.array(['apple', 'banana', 'mango'])
+print(arr)
+```
+
+Output:
+
+```python
+['apple' 'banana' 'mango']
+```
+
+---
+
+## Common String Functions
+
+### 1. Uppercase
+
+```python
+np.char.upper(arr)
+```
+
+Output:
+
+```python
+['APPLE' 'BANANA' 'MANGO']
+```
+
+---
+
+### 2. Lowercase
+
+```python
+np.char.lower(arr)
+```
+
+Output:
+
+```python
+['apple' 'banana' 'mango']
+```
+
+---
+
+### 3. Title Case
+
+```python
+np.char.title(['hello world', 'numpy array'])
+```
+
+Output:
+
+```python
+['Hello World' 'Numpy Array']
+```
+
+---
+
+### 4. Capitalize
+
+```python
+np.char.capitalize(['hello', 'world'])
+```
+
+Output:
+
+```python
+['Hello' 'World']
+```
+
+---
+
+### 5. String Length
+
+```python
+np.char.str_len(arr)
+```
+
+Output:
+
+```python
+[5 6 5]
+```
+
+---
+
+### 6. Concatenation
+
+```python
+a = np.array(['Hello', 'Good'])
+b = np.array(['World', 'Morning'])
+
+np.char.add(a, b)
+```
+
+Output:
+
+```python
+['HelloWorld' 'GoodMorning']
+```
+
+---
+
+### 7. Replace
+
+```python
+np.char.replace('Hello World', 'World', 'NumPy')
+```
+
+Output:
+
+```python
+'Hello NumPy'
+```
+
+---
+
+### 8. Split
+
+```python
+np.char.split('Python NumPy Pandas')
+```
+
+Output:
+
+```python
+['Python', 'NumPy', 'Pandas']
+```
+
+---
+
+### 9. Strip Spaces
+
+```python
+np.char.strip('   NumPy   ')
+```
+
+Output:
+
+```python
+'NumPy'
+```
+
+---
+
+### 10. Find Substring
+
+```python
+np.char.find('Hello World', 'World')
+```
+
+Output:
+
+```python
+6
+```
+
+---
+
+### 11. Compare Strings
+
+```python
+np.char.equal('apple', 'apple')
+```
+
+Output:
+
+```python
+True
+```
+
+---
+
+# NumPy Date and Time Functions
+
+NumPy provides the **`datetime64`** and **`timedelta64`** data types for working with dates and times.
+
+---
+
+## 1. Creating Dates
+
+```python
+import numpy as np
+
+date = np.datetime64('2026-06-25')
+print(date)
+```
+
+Output:
+
+```python
+2026-06-25
+```
+
+---
+
+## 2. Creating Date and Time
+
+```python
+dt = np.datetime64('2026-06-25T10:30')
+print(dt)
+```
+
+Output:
+
+```python
+2026-06-25T10:30
+```
+
+---
+
+## 3. Current Date
+
+```python
+today = np.datetime64('today')
+print(today)
+```
+
+Example Output:
+
+```python
+2026-06-25
+```
+
+---
+
+## 4. Date Arithmetic
+
+### Add Days
+
+```python
+date = np.datetime64('2026-06-25')
+
+new_date = date + np.timedelta64(10, 'D')
+print(new_date)
+```
+
+Output:
+
+```python
+2026-07-05
+```
+
+---
+
+### Subtract Dates
+
+```python
+d1 = np.datetime64('2026-06-25')
+d2 = np.datetime64('2026-06-20')
+
+print(d1 - d2)
+```
+
+Output:
+
+```python
+5 days
+```
+
+---
+
+## 5. Time Intervals (timedelta64)
+
+```python
+np.timedelta64(5, 'D')
+```
+
+Output:
+
+```python
+5 days
+```
+
+Units:
+
+| Code | Meaning      |
+| ---- | ------------ |
+| Y    | Years        |
+| M    | Months       |
+| W    | Weeks        |
+| D    | Days         |
+| h    | Hours        |
+| m    | Minutes      |
+| s    | Seconds      |
+| ms   | Milliseconds |
+| us   | Microseconds |
+| ns   | Nanoseconds  |
+
+---
+
+## 6. Date Range
+
+```python
+dates = np.arange(
+    np.datetime64('2026-06-01'),
+    np.datetime64('2026-06-06')
+)
+
+print(dates)
+```
+
+Output:
+
+```python
+['2026-06-01' '2026-06-02' '2026-06-03'
+ '2026-06-04' '2026-06-05']
+```
+
+---
+
+## 7. Difference in Days
+
+```python
+start = np.datetime64('2026-01-01')
+end = np.datetime64('2026-06-25')
+
+print(end - start)
+```
+
+Output:
+
+```python
+175 days
+```
+
+---
+
+# Quick Revision
+
+## String Functions
+
+| Function               | Purpose                 |
+| ---------------------- | ----------------------- |
+| `np.char.upper()`      | Convert to uppercase    |
+| `np.char.lower()`      | Convert to lowercase    |
+| `np.char.title()`      | Title case              |
+| `np.char.capitalize()` | Capitalize first letter |
+| `np.char.str_len()`    | Length of string        |
+| `np.char.add()`        | Concatenate strings     |
+| `np.char.replace()`    | Replace text            |
+| `np.char.split()`      | Split string            |
+| `np.char.strip()`      | Remove spaces           |
+| `np.char.find()`       | Find substring          |
+| `np.char.equal()`      | Compare strings         |
+
+---
+
+## Date & Time Functions
+
+| Function           | Purpose                  |
+| ------------------ | ------------------------ |
+| `np.datetime64()`  | Create date/time         |
+| `np.timedelta64()` | Time duration            |
+| `date + timedelta` | Add time                 |
+| `date1 - date2`    | Difference between dates |
+| `np.arange()`      | Generate date range      |
+
+### Key Point
+
+* **`numpy.char`** provides vectorized string operations.
+* **`datetime64`** stores dates/timestamps.
+* **`timedelta64`** represents durations and is used for date arithmetic.
+
+# NumPy File Input/Output Functions
+
+NumPy provides functions to **save arrays to files** and **load arrays from files**.
+
+---
+
+# 1. save() – Save Array in Binary Format
+
+Saves array as `.npy` file.
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+np.save('data.npy', arr)
+```
+
+Creates:
+
+```text
+data.npy
+```
+
+---
+
+# 2. load() – Load Array
+
+Reads a `.npy` file.
+
+```python
+arr = np.load('data.npy')
+
+print(arr)
+```
+
+Output:
+
+```python
+[1 2 3 4 5]
+```
+
+---
+
+# 3. savez() – Save Multiple Arrays
+
+```python
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+np.savez('arrays.npz', first=a, second=b)
+```
+
+Creates:
+
+```text
+arrays.npz
+```
+
+---
+
+## Loading Multiple Arrays
+
+```python
+data = np.load('arrays.npz')
+
+print(data['first'])
+print(data['second'])
+```
+
+Output:
+
+```python
+[1 2 3]
+[4 5 6]
+```
+
+---
+
+# 4. savetxt() – Save to Text File
+
+```python
+arr = np.array([[1,2,3],
+                [4,5,6]])
+
+np.savetxt('data.txt', arr)
+```
+
+Contents of file:
+
+```text
+1.000000000000000000e+00 2.000000000000000000e+00 3.000000000000000000e+00
+4.000000000000000000e+00 5.000000000000000000e+00 6.000000000000000000e+00
+```
+
+---
+
+## Formatting Output
+
+```python
+np.savetxt('data.txt', arr, fmt='%d')
+```
+
+File:
+
+```text
+1 2 3
+4 5 6
+```
+
+---
+
+# 5. loadtxt() – Read Text File
+
+```python
+data = np.loadtxt('data.txt')
+
+print(data)
+```
+
+Output:
+
+```python
+[[1. 2. 3.]
+ [4. 5. 6.]]
+```
+
+---
+
+# 6. genfromtxt() – Read Missing Data
+
+Useful when data contains missing values.
+
+Example file:
+
+```text
+1,2,3
+4,,6
+7,8,9
+```
+
+```python
+data = np.genfromtxt(
+    'sample.csv',
+    delimiter=','
+)
+
+print(data)
+```
+
+Output:
+
+```python
+[[1. 2. 3.]
+ [4. nan 6.]
+ [7. 8. 9.]]
+```
+
+---
+
+# 7. Reading CSV Files
+
+```python
+data = np.loadtxt(
+    'data.csv',
+    delimiter=','
+)
+
+print(data)
+```
+
+---
+
+# 8. Writing CSV Files
+
+```python
+arr = np.array([[1,2,3],
+                [4,5,6]])
+
+np.savetxt(
+    'data.csv',
+    arr,
+    delimiter=',',
+    fmt='%d'
+)
+```
+
+File:
+
+```text
+1,2,3
+4,5,6
+```
+
+---
+
+# Commonly Used Parameters
+
+## loadtxt()
+
+```python
+np.loadtxt(
+    fname,
+    delimiter=',',
+    dtype=int,
+    skiprows=1
+)
+```
+
+| Parameter   | Purpose          |
+| ----------- | ---------------- |
+| `fname`     | File name        |
+| `delimiter` | Separator        |
+| `dtype`     | Data type        |
+| `skiprows`  | Skip header rows |
+
+---
+
+## savetxt()
+
+```python
+np.savetxt(
+    fname,
+    array,
+    delimiter=',',
+    fmt='%d'
+)
+```
+
+| Parameter   | Purpose       |
+| ----------- | ------------- |
+| `fname`     | File name     |
+| `delimiter` | Separator     |
+| `fmt`       | Output format |
+
+---
+
+# Interview Differences
+
+| Function       | Purpose                        |
+| -------------- | ------------------------------ |
+| `save()`       | Save single array (.npy)       |
+| `load()`       | Load .npy file                 |
+| `savez()`      | Save multiple arrays (.npz)    |
+| `savetxt()`    | Save text/CSV file             |
+| `loadtxt()`    | Read text/CSV file             |
+| `genfromtxt()` | Read files with missing values |
+
+---
+
+# Quick Revision
+
+```python
+# Save array
+np.save('data.npy', arr)
+
+# Load array
+np.load('data.npy')
+
+# Save multiple arrays
+np.savez('arrays.npz', a=a, b=b)
+
+# Save text file
+np.savetxt('data.txt', arr)
+
+# Read text file
+np.loadtxt('data.txt')
+
+# Read CSV
+np.loadtxt('data.csv', delimiter=',')
+
+# Handle missing values
+np.genfromtxt('data.csv', delimiter=',')
+```
+
+### Key Point
+
+* **`.npy`** → Fast binary storage for a single NumPy array (`save`, `load`).
+* **`.npz`** → Store multiple arrays (`savez`).
+* **Text/CSV files** → Use `savetxt`, `loadtxt`.
+* **Missing values** → Use `genfromtxt`.
